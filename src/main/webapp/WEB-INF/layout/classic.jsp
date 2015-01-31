@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +26,8 @@
 <title><tiles:getAsString name="title" /></title>
 </head>
 <body>
+    
+    <tilesx:useAttribute name="current"/>
 
 	<div class="container">
 		<!-- Static navbar -->
@@ -40,13 +45,8 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="<spring:url value='/'/>">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact1</a></li>
-						<li><a href="#">Contact2</a></li>
-						<li><a href="#">Contact3</a></li>
-						<li><a href="#">Contact4</a></li>
-						<li><a href="#">Contact5</a></li>
+                        <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value='/index.html'/>">Home</a></li>
+                        <li class="${current == 'users' ? 'active' : ''}"><a href='<spring:url value="/users.html"></spring:url>'>Users</a></li>					
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
