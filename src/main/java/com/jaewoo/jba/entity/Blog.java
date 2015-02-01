@@ -2,6 +2,7 @@ package com.jaewoo.jba.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,24 +24,8 @@ public class Blog {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
-	public User getUser() {
-		return user;
-	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
-
-	@OneToMany(mappedBy = "blog")
+	@OneToMany(mappedBy = "blog", cascade = CascadeType.REMOVE)
 	private List<Item> items;
 
 	public Integer getId() {
@@ -65,5 +50,21 @@ public class Blog {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public List<Item> getItems() {
+		return items;
+	}
+	
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 }

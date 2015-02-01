@@ -14,8 +14,18 @@ public class Item {
 
 	@Id
 	@GeneratedValue
+	private Integer id;
+	
 	private String title;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	private String description;
 	
 	@Column(name = "published_date")
