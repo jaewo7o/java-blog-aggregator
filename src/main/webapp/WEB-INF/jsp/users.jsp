@@ -7,6 +7,8 @@
 <thead>
     <tr>
         <th>user name</th>
+        <th>password</th>
+        <th>enabled</th>
     </tr>
 </thead>
 <tbody>
@@ -16,6 +18,12 @@
                 <a href="<spring:url value="/users/${user.id}.html"/>">
                     ${user.name}
                 </a>
+            </td>
+            <td>
+                ${user.password}
+            </td>
+            <td>
+                ${user.enabled}
             </td>
         </tr>        
     </c:forEach>

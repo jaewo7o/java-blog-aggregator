@@ -60,9 +60,15 @@ public class UserService {
 		user.setEnabled(true);
 		
 		List<Role> roles = new ArrayList<Role>();
-		roles.add(roleRepository.findByName("ROLE_USER"));
+		Role role = roleRepository.findByName("ROLE_USER");
+		roles.add(role);
 		user.setRoles(roles);
 		
 		userRepository.save(user);
+	}
+
+	public User findOneWithBlog(String name) {
+		User user = userRepository.findByName(name);
+		return findOneWithBlog(user.getId());
 	}
 }

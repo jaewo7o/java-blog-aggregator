@@ -57,7 +57,10 @@
                         </security:authorize>
                         <security:authorize access="!isAuthenticated()">                                                    
                             <li class="${current == 'login' ? 'active' : ''}"><a href='<spring:url value="/login.html"></spring:url>'>Login</a></li>
-                        </security:authorize>                            
+                        </security:authorize>
+                        <security:authorize access="isAuthenticated()">                                                    
+                            <li class="${current == 'users' ? 'active' : ''}"><a href='<spring:url value="/account.html"></spring:url>'>My account</a></li>
+                        </security:authorize>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
