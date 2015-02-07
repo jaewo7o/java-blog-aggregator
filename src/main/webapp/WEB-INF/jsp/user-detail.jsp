@@ -75,6 +75,8 @@
             <h1>${blog.name}</h1>
             <p>${blog.url}</p>
             
+            <a href="<spring:url value="/blog/remove/${blog.id}.html"/>" class="btn btn-danger">Remove Blog</a>
+            
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>

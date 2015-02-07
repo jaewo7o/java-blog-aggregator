@@ -9,6 +9,7 @@
         <th>user name</th>
         <th>password</th>
         <th>enabled</th>
+        <th>operation</th>
     </tr>
 </thead>
 <tbody>
@@ -25,6 +26,11 @@
             <td>
                 ${user.enabled}
             </td>
+            <td>
+                <a href="<spring:url value="/users/remove/${user.id}.html"/>" class="btn btn-danger">
+                    remove
+                </a>
+            </td>            
         </tr>        
     </c:forEach>
 </tbody>
