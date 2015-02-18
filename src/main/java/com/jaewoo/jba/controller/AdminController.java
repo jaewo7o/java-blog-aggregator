@@ -13,7 +13,7 @@ import com.jaewoo.jba.service.UserService;
 public class AdminController {
 	@Autowired
 	private UserService userService;
-	
+	 
 	@RequestMapping
 	public String users(Model model){
 		model.addAttribute("users", userService.findAll());
