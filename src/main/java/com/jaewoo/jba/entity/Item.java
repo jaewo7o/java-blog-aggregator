@@ -18,14 +18,7 @@ public class Item {
 	
 	private String title;
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
+	@Column(length = 10000)
 	private String description;
 	
 	@Column(name = "published_date")
@@ -36,6 +29,16 @@ public class Item {
 	@ManyToOne
 	@JoinColumn(name = "blog_id")
 	private Blog blog;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 
 	public Blog getBlog() {
 		return blog;

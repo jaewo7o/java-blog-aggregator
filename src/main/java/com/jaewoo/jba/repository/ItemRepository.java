@@ -11,4 +11,6 @@ import com.jaewoo.jba.entity.Item;
 public interface ItemRepository extends JpaRepository<Item, Integer>{
 
 	List<Item> findByBlog(Blog blog, Pageable pageable);
+	
+	List<Item> findByBlogAndLink(Blog blog, String link);
 }
