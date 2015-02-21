@@ -39,13 +39,8 @@ public class BlogService {
 				List<Item> findByBlogAndLink = itemRepository.findByBlogAndLink(blog, item.getLink());
 				
 				if (findByBlogAndLink.isEmpty()) {
-					Item item1 = new Item();
-					item1.setBlog(blog);
-					item1.setTitle(item.getTitle());
-					item1.setLink(item.getLink());
-					item1.setPublishedDate(item.getPublishedDate());
-					item1.setDescription(item.getDescription());
-					itemRepository.save(item1);
+					item.setBlog(blog);
+					itemRepository.save(item);
 				}
 			}
 		} catch (RssException e) {
