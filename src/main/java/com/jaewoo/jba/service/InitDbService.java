@@ -64,5 +64,23 @@ public class InitDbService {
 		blogJavavids.setUrl("http://feeds.feedburner.com/javavids?format=xml");
 		blogJavavids.setUser(userAdmin);
 		blogRepository.save(blogJavavids);
+
+		Blog blogEclipse = new Blog();
+		blogEclipse.setName("Eclipse");
+		blogEclipse.setUrl("http://eclipsesource.com/blogs/author/irbull/feed");
+		blogEclipse.setUser(userAdmin);
+		blogRepository.save(blogEclipse);
+		
+		Blog javaWolrdCore = new Blog();
+		javaWolrdCore.setName("Java world core");
+		javaWolrdCore.setUrl("http://www.javaworld.com/category/core-java/index.rss");
+		javaWolrdCore.setUser(userAdmin);
+		blogRepository.save(javaWolrdCore);
+		
+		Blog tomcatExpert = new Blog();
+		tomcatExpert.setName("Tomcat expert");
+		tomcatExpert.setUrl("http://www.tomcatexpert.com/blog/feed");
+		tomcatExpert.setUser(userAdmin);
+		blogRepository.save(tomcatExpert);
 	}
 }

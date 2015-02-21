@@ -15,7 +15,11 @@
     <tbody>
         <c:forEach items="${items}" var="item">
             <tr>
-                <td><c:out value="${item.publishedDate}" /></td>
+                <td>
+                    <c:out value="${item.publishedDate}" />
+                    <br/>
+                    ${item.blog.name}
+                </td>
                 <td>
                     <strong>
                         <a href="<c:out value="${item.link}" />" target="_blank">
