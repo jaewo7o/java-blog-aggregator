@@ -44,4 +44,12 @@
     <import resource="security.xml"/>
     
     <task:annotation-driven/>
+    
+    <!-- <bean id="facadeMonitoringAdvisor" class="net.bull.javamelody.MonitoringSpringAdvisor">
+        <property name="pointcut">
+            <bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+                 property name="pattern" value=".*Facade.*" /
+            </bean>
+        </property>
+    </bean> -->
 </beans>
